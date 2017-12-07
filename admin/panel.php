@@ -45,6 +45,9 @@ if(isset($_SESSION['log_status']) && $_SESSION['log_status'] === 1) {
             require_once('../admin/panel/view/team_list.php');
             team_list();
             break;
+        case "zawodnicy":
+            require_once('../admin/panel/view/players.php');
+            break;
     }
 }
 else {
