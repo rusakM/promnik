@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once('../admin/scripts/connect.php');
+    require_once('../connect.php');
     $con = mysqli_connect($host, $usr, $pass, $db);
     $id = $_GET['id'];
     $test = mysqli_fetch_array(mysqli_query($con, "SELECT * FROM players WHERE player_id='$id'"));
@@ -19,6 +19,8 @@
         if($test[$a] !== $data[$b]) {
             mysqli_query($con, "UPDATE players SET ".$columns[$c]."=".$data[$b]."WHERE player_id='$id'");
         }
+        $b++;
+        $c++;
     }
 
     
