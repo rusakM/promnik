@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Czas generowania: 06 Gru 2017, 20:44
+-- Czas generowania: 08 Gru 2017, 16:45
 -- Wersja serwera: 10.1.28-MariaDB
 -- Wersja PHP: 7.1.10
 
@@ -31,6 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `players` (
   `player_id` int(11) NOT NULL,
   `team_id` int(11) NOT NULL,
+  `number` int(11) NOT NULL,
   `name` text COLLATE utf8_polish_ci NOT NULL,
   `surname` text COLLATE utf8_polish_ci NOT NULL,
   `birth_date` text COLLATE utf8_polish_ci NOT NULL,
@@ -201,13 +202,13 @@ ALTER TABLE `players`
 -- AUTO_INCREMENT dla tabeli `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT dla tabeli `posts_pictures`
 --
 ALTER TABLE `posts_pictures`
-  MODIFY `id_picture` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id_picture` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT dla tabeli `queues`
