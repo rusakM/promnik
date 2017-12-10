@@ -1,4 +1,5 @@
 <?php
+session_start();
 $id = $_GET['id'];
 require_once("../connect.php");
 $con = mysqli_connect($host, $usr, $pass, $db);

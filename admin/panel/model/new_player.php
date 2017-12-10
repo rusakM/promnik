@@ -22,5 +22,5 @@
 
     mysqli_query($con, "INSERT INTO players(player_id, team_id, number, name, surname, birth_date, photo) VALUES (NULL, '$team','$number','$name','$surname','$date', '$photo')");
     mysqli_close($con);
-    
+    header("Location: /promnik/admin/panel.php?strona=zawodnicy&druzyna=$team");
 ?>

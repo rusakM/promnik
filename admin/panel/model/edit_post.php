@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once('../admin/scripts/connect.php');
+    require_once('../connect.php');
     $con = mysqli_connect($host, $usr, $pass, $db);
     $id = $_GET['id'];
     $img_location = $_SERVER['DOCUMENT_ROOT'].'/promnik/img/posts';
