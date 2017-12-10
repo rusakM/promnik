@@ -7,7 +7,7 @@
     
     echo '<h3>'.$team_name[0].'</h3><br><br><a href="../admin/panel.php?strona=dodajzawodnika&druzyna='.$id.'"><button>Dodaj zawodnika</button></a><hr>';
     while($p = mysqli_fetch_assoc($players)) {
-        echo '<div class="row"><form action="../admin/panel/model/player_edit.php?id='.$p['player_id'].'" method="post">
+        echo '<div class="row"><form action="../admin/panel/model/player_edit.php?id='.$p['player_id'].'&team='.$id.'" method="post">
         <label>Numer:</label><input type="number" value="'.$p['number'].'" name="number">
         <label>Imie:</label><input type="text" name="name" value="'.$p['name'].'">
         <label>Nazwisko</label><input type="text" name="surname" value="'.$p['surname'].'">
