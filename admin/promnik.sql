@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Czas generowania: 08 Gru 2017, 16:45
+-- Czas generowania: 12 Gru 2017, 22:59
 -- Wersja serwera: 10.1.28-MariaDB
 -- Wersja PHP: 7.1.10
 
@@ -37,6 +37,13 @@ CREATE TABLE `players` (
   `birth_date` text COLLATE utf8_polish_ci NOT NULL,
   `photo` text COLLATE utf8_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+--
+-- Zrzut danych tabeli `players`
+--
+
+INSERT INTO `players` (`player_id`, `team_id`, `number`, `name`, `surname`, `birth_date`, `photo`) VALUES
+(1, 3, 1, 'Filip', 'Rusak', '1998-06-21', '2582853063.jpg');
 
 -- --------------------------------------------------------
 
@@ -76,6 +83,13 @@ CREATE TABLE `queues` (
   `number` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
+--
+-- Zrzut danych tabeli `queues`
+--
+
+INSERT INTO `queues` (`queue_id`, `team_id`, `number`) VALUES
+(1, 3, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -89,9 +103,16 @@ CREATE TABLE `schedules` (
   `guests` text COLLATE utf8_polish_ci NOT NULL,
   `date` text COLLATE utf8_polish_ci NOT NULL,
   `hour` text COLLATE utf8_polish_ci NOT NULL,
-  `score_hosts` int(11) NOT NULL,
-  `score_guests` int(11) NOT NULL
+  `score_hosts` varchar(3) COLLATE utf8_polish_ci NOT NULL,
+  `score_guests` varchar(3) COLLATE utf8_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+--
+-- Zrzut danych tabeli `schedules`
+--
+
+INSERT INTO `schedules` (`schedule_id`, `queue_id`, `hosts`, `guests`, `date`, `hour`, `score_hosts`, `score_guests`) VALUES
+(1, 1, 'rusio', 'filip', '21-06-1998', '21:21', '0', '1');
 
 -- --------------------------------------------------------
 
@@ -196,7 +217,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT dla tabeli `players`
 --
 ALTER TABLE `players`
-  MODIFY `player_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `player_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT dla tabeli `posts`
@@ -214,13 +235,13 @@ ALTER TABLE `posts_pictures`
 -- AUTO_INCREMENT dla tabeli `queues`
 --
 ALTER TABLE `queues`
-  MODIFY `queue_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `queue_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT dla tabeli `schedules`
 --
 ALTER TABLE `schedules`
-  MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT dla tabeli `teams`
