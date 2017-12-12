@@ -51,6 +51,9 @@ if(isset($_SESSION['log_status']) && $_SESSION['log_status'] === 1) {
         case "dodajzawodnika":
             require_once('../admin/panel/view/new_player.php');
             break;
+        case "terminarz":
+            require_once('../admin/panel/view/scheluder.php');
+            break;
     }
 }
 else {

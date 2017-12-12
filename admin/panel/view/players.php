@@ -14,14 +14,14 @@
         <label>Data urodzenia:</label><input type="date" name="birth_date" value="'.$p['birth_date'].'">
         <input type="submit" value="Zapisz zmiany"></form><br>
         <label>Zdjęcie:</label><br>
-        <form enctype="multipart/form-data" method="post" action="../admin/panel.model/player_img.php?id='.$p['player_id'].'">';
+        <form enctype="multipart/form-data" method="post" action="../admin/panel/model/player_img.php?id='.$p['player_id'].'&team='.$id.'">';
         if($p['photo'] === "") {
-            echo '<input type="file" name="photo"><br>
+            echo '<input type="file" name="picture"><br>
             <input type="submit" value="Zapisz zdjęcie">';
         }
         else {
             echo '<img src="/promnik/img/players/'.$p['photo'].'" alt="'.$p['name'].' '.$p['surname'].'" class="photo" width="80"><br>
-            <input type="file" name="photo"><br>
+            <input type="file" name="picture"><br>
             <input type="submit" value="Zmień zdjęcie">';
         }
         echo '</form><a href="/promnik/admin/panel/model/player_del.php?id='.$p['player_id'].'&team='.$id.'">
