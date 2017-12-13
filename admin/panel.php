@@ -52,9 +52,10 @@ if(isset($_SESSION['log_status']) && $_SESSION['log_status'] === 1) {
             require_once('../admin/panel/view/new_player.php');
             break;
         case "terminarz":
-            require_once('../admin/panel/view/scheluder.php');
+            require_once('../admin/panel/view/scheduler.php');
             break;
     }
+    echo '</div></div>';
 }
 else {
     echo 'Błąd logowania<br><a href="../admin/index.php">Powrót do strony logowania</a>';
