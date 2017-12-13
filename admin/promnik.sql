@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Czas generowania: 12 Gru 2017, 22:59
+-- Czas generowania: 13 Gru 2017, 22:45
 -- Wersja serwera: 10.1.28-MariaDB
 -- Wersja PHP: 7.1.10
 
@@ -83,13 +83,6 @@ CREATE TABLE `queues` (
   `number` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
---
--- Zrzut danych tabeli `queues`
---
-
-INSERT INTO `queues` (`queue_id`, `team_id`, `number`) VALUES
-(1, 3, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -107,13 +100,6 @@ CREATE TABLE `schedules` (
   `score_guests` varchar(3) COLLATE utf8_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
---
--- Zrzut danych tabeli `schedules`
---
-
-INSERT INTO `schedules` (`schedule_id`, `queue_id`, `hosts`, `guests`, `date`, `hour`, `score_hosts`, `score_guests`) VALUES
-(1, 1, 'rusio', 'filip', '21-06-1998', '21:21', '0', '1');
-
 -- --------------------------------------------------------
 
 --
@@ -122,15 +108,16 @@ INSERT INTO `schedules` (`schedule_id`, `queue_id`, `hosts`, `guests`, `date`, `
 
 CREATE TABLE `teams` (
   `team_id` int(11) NOT NULL,
-  `name` text COLLATE utf8_polish_ci NOT NULL
+  `name` text COLLATE utf8_polish_ci NOT NULL,
+  `description` text COLLATE utf8_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
 -- Zrzut danych tabeli `teams`
 --
 
-INSERT INTO `teams` (`team_id`, `name`) VALUES
-(3, 'UKS Promnik GoÅ„czyce');
+INSERT INTO `teams` (`team_id`, `name`, `description`) VALUES
+(3, 'UKS Promnik GoÅ„czyce', '');
 
 -- --------------------------------------------------------
 
@@ -152,7 +139,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `login`, `password`, `name`, `email`) VALUES
 (3, 'rusakkk', 'd90cc3ca2fc880f52c662d2dac3440a0', 'Mateusz Rusak', 'rusakkk@live.com'),
-(4, 'rusio2121', 'd90cc3ca2fc880f52c662d2dac3440a0', 'Mateusz Rusak', 'mateusz.rusak2@gmail.com');
+(4, 'rusio2121', 'd90cc3ca2fc880f52c662d2dac3440a0', 'Mateusz', 'mateusz.rusak2@gmail.com');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -235,13 +222,13 @@ ALTER TABLE `posts_pictures`
 -- AUTO_INCREMENT dla tabeli `queues`
 --
 ALTER TABLE `queues`
-  MODIFY `queue_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `queue_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT dla tabeli `schedules`
 --
 ALTER TABLE `schedules`
-  MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT dla tabeli `teams`

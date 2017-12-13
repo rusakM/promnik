@@ -10,10 +10,13 @@ function team_list() {
             <input type="submit" value="Dodaj drużynę">
             </form>
             <br><hr>';
-        $i = 1;
     }
+    else {
+        echo '<hr><br>';
+    }
+    $i = 1;
     while($row = mysqli_fetch_array($q)) {
-        echo '<span class="row">'.$i.'. '.$row[1].' <a href="../admin/panel.php?strona=zawodnicy&druzyna='.$row[0].'"><button>Kadra</button></a><a href="../admin/panel.php?strona=terminarz&druzyna='.$row[0].'"><button>Terminarz</button></a></span>';
+        echo '<span class="row">'.$i.'. <a href="/promnik/admin/panel.php?strona=edytujdruzyne&id='.$row[0].'">'.$row[1].'</a> <a href="../admin/panel.php?strona=zawodnicy&druzyna='.$row[0].'"><button>Kadra</button></a><a href="../admin/panel.php?strona=terminarz&druzyna='.$row[0].'"><button>Terminarz</button></a></span>';
         $i++;
     }
     mysqli_close($con);

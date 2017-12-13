@@ -54,6 +54,11 @@ if(isset($_SESSION['log_status']) && $_SESSION['log_status'] === 1) {
         case "terminarz":
             require_once('../admin/panel/view/scheduler.php');
             break;
+        case "dodajmecz":
+            require_once('../admin/panel/view/add_task.php');
+            break;
+        case "edytujdruzyne":
+            require_once('../admin/panel/view/team_edit.php');
     }
     echo '</div></div>';
 }
