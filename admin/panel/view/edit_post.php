@@ -1,7 +1,6 @@
 <?php
     $id = $_GET['id'];
     require_once('../admin/scripts/connect.php');
-    //require_once('../connect.php');
     $con = mysqli_connect($host, $usr, $pass, $db);
     $arr = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM posts WHERE id_post='$id'"));
     echo '<h3> Edytujesz post z dnia: '.$arr['date'].'</h3><br><br>

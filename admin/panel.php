@@ -59,6 +59,10 @@ if(isset($_SESSION['log_status']) && $_SESSION['log_status'] === 1) {
             break;
         case "edytujdruzyne":
             require_once('../admin/panel/view/team_edit.php');
+            break;
+        case "galeria":
+            require_once('../admin/panel/view/gallery.php');
+            break;
     }
     echo '</div></div>';
 }
