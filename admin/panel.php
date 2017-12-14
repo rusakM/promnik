@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>pomnikgonczyce.pl - panel admina</title>
     <link rel="stylesheet" href="../css/panel.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
 <body>
 
