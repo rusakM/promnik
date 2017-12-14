@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Czas generowania: 13 Gru 2017, 22:45
--- Wersja serwera: 10.1.28-MariaDB
--- Wersja PHP: 7.1.10
+-- Host: 127.0.0.1
+-- Czas generowania: 14 Gru 2017, 11:26
+-- Wersja serwera: 10.1.19-MariaDB
+-- Wersja PHP: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -21,6 +19,19 @@ SET time_zone = "+00:00";
 --
 -- Baza danych: `promnik`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `gallery`
+--
+
+CREATE TABLE `gallery` (
+  `picture_id` int(11) NOT NULL,
+  `name` text COLLATE utf8_polish_ci NOT NULL,
+  `title` text COLLATE utf8_polish_ci NOT NULL,
+  `date` text COLLATE utf8_polish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 -- --------------------------------------------------------
 
@@ -146,6 +157,12 @@ INSERT INTO `users` (`id_user`, `login`, `password`, `name`, `email`) VALUES
 --
 
 --
+-- Indexes for table `gallery`
+--
+ALTER TABLE `gallery`
+  ADD PRIMARY KEY (`picture_id`);
+
+--
 -- Indexes for table `players`
 --
 ALTER TABLE `players`
@@ -201,47 +218,45 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT dla tabeli `gallery`
+--
+ALTER TABLE `gallery`
+  MODIFY `picture_id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT dla tabeli `players`
 --
 ALTER TABLE `players`
   MODIFY `player_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT dla tabeli `posts`
 --
 ALTER TABLE `posts`
   MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT dla tabeli `posts_pictures`
 --
 ALTER TABLE `posts_pictures`
   MODIFY `id_picture` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT dla tabeli `queues`
 --
 ALTER TABLE `queues`
-  MODIFY `queue_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
+  MODIFY `queue_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT dla tabeli `schedules`
 --
 ALTER TABLE `schedules`
   MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT dla tabeli `teams`
 --
 ALTER TABLE `teams`
   MODIFY `team_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT dla tabeli `users`
 --
 ALTER TABLE `users`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- Ograniczenia dla zrzutów tabel
 --
@@ -269,7 +284,6 @@ ALTER TABLE `queues`
 --
 ALTER TABLE `schedules`
   ADD CONSTRAINT `schedules_ibfk_1` FOREIGN KEY (`queue_id`) REFERENCES `queues` (`queue_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
