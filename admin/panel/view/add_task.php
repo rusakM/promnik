@@ -13,14 +13,14 @@
     }
     echo '</select><br>
         <label>Gospodarze:</label>
-        <input type="text" value="'.$team_name[0].'" name="hosts"><br>
+        <input type="text" value="'.$team_name[0].'" name="hosts" class="form-control col-md-4" required><br>
         <label>Goście:</label>
-        <input type="text" name="guests"><br>
+        <input type="text" name="guests" class="form-control col-md-4" required><br>
         <label>Data:</label>
-        <input type="date" name="date"><br>
+        <input type="date" name="date" class="form-control col-md-4" required><br>
         <label>Godzina:</label>
-        <input type="time" name="hour"><br>
-        <input type="submit" value="Wyślij">
+        <input type="time" name="hour" class="form-control col-md-4" required><br>
+        <input type="submit" value="Wyślij" class="btn btn-primary">
         </form>';
     mysqli_close($con); 
 ?>

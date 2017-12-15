@@ -10,6 +10,7 @@ if(mysqli_num_rows($query) === 1) {
     $name = mysqli_fetch_assoc($query);
     $_SESSION['usr_name'] = $name['name'];
     $_SESSION['log_status'] = 1;
+    $_SESSION['user_id'] = $name['id_user'];
     mysqli_close($con);
     header('Location: ../panel.php?strona=glowna');
 }

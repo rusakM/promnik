@@ -2,7 +2,7 @@
     session_start();
     $team = $_GET['team'];
     $id = $_GET['id'];
-    if($_FILES['pic'.$a]['error'] === 0 && $_FILES['pic'.$a]['type'] === 'image/jpeg') {
+    if($_FILES['picture']['error'] === 0 && $_FILES['picture']['type'] === 'image/jpeg') {
         require_once('../connect.php');
         $con = mysqli_connect($host, $usr, $pass, $db);
         $img_location = $_SERVER['DOCUMENT_ROOT'].'/promnik/img/players';

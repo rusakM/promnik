@@ -4,22 +4,31 @@
     <meta charset="UTF-8">
     <title>Rejestracja użytkownika</title>
     <link rel="stylesheet" href="/css/admin.css">
-    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/promnik/css/bootstrap.css">
+    <style>
+        body {
+            background-color:aliceblue;
+        }
+    </style>
 </head>
 <body>
-    <div id="container">
-        <h3>Rejestracja nowego użytkownika:</h3>
+   <div class="row">
+    <div class="col-md-4"></div>
+    <div id="container" class="col-md-4 jumbotron">
+        <h2 class="text-primary"><b>Rejestracja nowego użytkownika:</b></h2>
         <form action="../admin/scripts/register.php" method="post">
-           <label>email:</label><br>
+           <label>Email:</label><br>
             <input type="text" name="email"><br>
             <label>Login:</label><br>
             <input type="text" name="login"><br>
             <label>Imię i nazwisko:</label><br>
             <input type="text" name="name"><br>
             <label>Hasło:</label><br>
-            <input type="password" name="pass"><br>
-            <input type="submit" value="Zarejestruj">
+            <input type="password" name="pass"><br><br>
+            <input type="submit" value="Zarejestruj" class="btn-primary">
         </form>
+    </div>
+    <div class="col-md-4"></div>
     </div>
 </body>
 </html>
