@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Czas generowania: 14 Gru 2017, 16:52
+-- Czas generowania: 27 Gru 2017, 17:26
 -- Wersja serwera: 10.1.28-MariaDB
 -- Wersja PHP: 7.1.10
 
@@ -34,6 +34,13 @@ CREATE TABLE `gallery` (
   `date` text COLLATE utf8_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
+--
+-- Zrzut danych tabeli `gallery`
+--
+
+INSERT INTO `gallery` (`picture_id`, `name`, `date`) VALUES
+(1, '3722328169.jpg', '16-12-2017');
+
 -- --------------------------------------------------------
 
 --
@@ -49,13 +56,6 @@ CREATE TABLE `players` (
   `birth_date` text COLLATE utf8_polish_ci NOT NULL,
   `photo` text COLLATE utf8_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
-
---
--- Zrzut danych tabeli `players`
---
-
-INSERT INTO `players` (`player_id`, `team_id`, `number`, `name`, `surname`, `birth_date`, `photo`) VALUES
-(1, 3, 1, 'Filip', 'Rusak', '1998-06-21', '2582853063.jpg');
 
 -- --------------------------------------------------------
 
@@ -129,7 +129,7 @@ CREATE TABLE `teams` (
 --
 
 INSERT INTO `teams` (`team_id`, `name`, `description`) VALUES
-(3, 'UKS Promnik GoÅ„czyce', '');
+(1, 'KS Promnik GoÅ„czyce', '');
 
 -- --------------------------------------------------------
 
@@ -222,13 +222,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT dla tabeli `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `picture_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `picture_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT dla tabeli `players`
 --
 ALTER TABLE `players`
-  MODIFY `player_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `player_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT dla tabeli `posts`
@@ -246,19 +246,19 @@ ALTER TABLE `posts_pictures`
 -- AUTO_INCREMENT dla tabeli `queues`
 --
 ALTER TABLE `queues`
-  MODIFY `queue_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `queue_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT dla tabeli `schedules`
 --
 ALTER TABLE `schedules`
-  MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT dla tabeli `teams`
 --
 ALTER TABLE `teams`
-  MODIFY `team_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `team_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`

@@ -1,0 +1,87 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#banner {
+    height: 20em;
+    background-image: url('../img/page/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    width: 100vw;
+    position: absolute;
+    top: 80px;
+}
+
+#list {
+    margin-bottom: 0rem;
+    list-style-type: none;
+    vertical-align:baseline;
+}
+
+#list > div > li {
+    font-size: 1em;
+    height: 5em;
+    padding-top: 1.5em;
+    padding-bottom: 1em;
+    letter-spacing: 0.2px;
+    padding-left: 1em;
+    padding-right: 1em;
+    
+}
+#list > div > li:hover {
+    background-color: #3e943e;
+    color: #EEE;
+    display:block;
+}
+#list > div > li > ul {
+    display: none;
+    position: absolute;
+    top: 5em;
+    padding-left: 1em;
+    background-color: #AAA;
+    list-style-type: none;
+    width: 10em;
+} 
+#list > div > li > ul > li:hover > ul{
+    display: block;
+}
+
+#list > div > li > ul > li > ul {
+    display: none;
+}
+
+#list > div > li:hover > ul {
+    display: block;
+}
+
+header {
+    color: white;
+    position: relative;
+}
+
+nav {
+    background-color: #48ad48;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+}
+#logo {
+    height: 5em;
+}
+
+#news {
+    position: relative;
+    top: 25em;
+    bottom: 0;
+}
+
+#articles {
+    margin-top: 1em;
+    border-left: 1px solid #BBB;
+    border-right: 1px solid #BBB;
+}

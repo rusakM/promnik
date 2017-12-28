@@ -18,7 +18,10 @@ function team_list() {
     $i = 1;
     echo '<div class="row"><div class="col-md-1"></div><div class="col-md-10">';
     while($row = mysqli_fetch_array($q)) {
-        echo '<span>'.$i.'. <a href="/promnik/admin/panel.php?strona=edytujdruzyne&id='.$row[0].'">'.$row[1].'</a> <a href="../admin/panel.php?strona=zawodnicy&druzyna='.$row[0].'"><button class="btn">Kadra</button></a><a href="../admin/panel.php?strona=terminarz&druzyna='.$row[0].'"><button class="btn">Terminarz</button></a></span>';
+        if($row[0] == 2) {
+            echo "<br><hr><p>Juniorzy:</p><br>";
+        }
+        echo '<span>'.$i.'. <a href="/promnik/admin/panel.php?strona=edytujdruzyne&id='.$row[0].'">'.$row[1].'</a> <a href="../admin/panel.php?strona=zawodnicy&druzyna='.$row[0].'"><button class="btn">Kadra</button></a><a href="../admin/panel.php?strona=terminarz&druzyna='.$row[0].'"><button class="btn">Terminarz</button></a></span><br><br>';
         $i++;
     }
     echo '</div></div>';
