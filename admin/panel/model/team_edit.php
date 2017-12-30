@@ -5,7 +5,8 @@
     $id = $_GET['id'];
     $name = $_POST['name'];
     $desc = $_POST['description'];
-    mysqli_query($con, "UPDATE teams SET name='$name', description='$desc' WHERE team_id='$id'");
+    $link = $_POST['link'];
+    mysqli_query($con, "UPDATE teams SET name='$name', description='$desc', link='$link' WHERE team_id='$id'");
     mysqli_close($con);
     header('Location: /promnik/admin/panel.php?strona=teams');
 ?>

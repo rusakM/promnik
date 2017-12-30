@@ -1,13 +1,9 @@
 <?php
-   /* $c = mysqli_connect("127.0.0.1", "root", "", "promnik");
-    $q = mysqli_query($c, "SELECT * FROM players");
-    $f = [];
-    while($arr = mysqli_fetch_field($q)) {
-        array_push($f, $arr->name);
-    }
-
-   print_r($f);
- */
-$img_location = $_SERVER['DOCUMENT_ROOT'].'/promnik/img/players';
-unlink("$img_location/1.jpg");
+    require_once($_SERVER['DOCUMENT_ROOT'].'/promnik/admin/panel/connect.php');
+        $con = mysqli_connect($host, $usr, $pass, $db);
+        $query = mysqli_query($con, "SELECT * FROM posts");
+        $rows = mysqli_fetch_assoc($query);
+        $content = '';
+        $content += $rows['content'];
+    echo $content;
 ?>

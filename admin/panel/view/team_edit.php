@@ -9,6 +9,8 @@
         <input type="text" name="name" value="'.$team_arr[1].'" class="form-control col-md-7"><br>
         <label>Opis: </label>
         <textarea name="description" class="form-control col-md-7">'.$team_arr[2].'</textarea><br>
+        <label>Link do www.laczynaspilka.pl:</label>
+        <input type="text" name="link" value="'.$team_arr[3].'" class="form-control col-md-7"><br>
         <input type="submit" value="Zapisz" class="btn"></form>';
     mysqli_close($con);
 ?>

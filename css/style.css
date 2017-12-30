@@ -1,6 +1,11 @@
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
+}
+
+
+div {
+    padding: 0;
 }
 
 #banner {
@@ -9,16 +14,29 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center;
-    width: 100vw;
+    background-position: bottom;
+    width: 100%;
     position: absolute;
     top: 80px;
+}
+
+#slogan {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: Arial;
+    font-weight: 900;
+    padding: 10px 25px 10px 25px;
+    border: 15px double white;
 }
 
 #list {
     margin-bottom: 0rem;
     list-style-type: none;
     vertical-align:baseline;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 #list > div > li {
@@ -29,6 +47,7 @@
     letter-spacing: 0.2px;
     padding-left: 1em;
     padding-right: 1em;
+    transition-duration: 0.5s;
     
 }
 #list > div > li:hover {
@@ -41,9 +60,11 @@
     position: absolute;
     top: 5em;
     padding-left: 1em;
-    background-color: #AAA;
+    background-color: #888;
     list-style-type: none;
     width: 10em;
+    transition-duration: 1s;
+    height: 0;
 } 
 #list > div > li > ul > li:hover > ul{
     display: block;
@@ -51,10 +72,24 @@
 
 #list > div > li > ul > li > ul {
     display: none;
+    transition-duration: 1s;
+    list-style-type: none;
+    padding-left: 1em;
+    background-color: #AAA;
 }
 
 #list > div > li:hover > ul {
     display: block;
+    transition-duration: 1s;
+    height: auto;
+}
+li > a {
+    text-decoration: none;
+    color: white;
+}
+li > a:hover {
+    text-decoration: none;
+    color: #DDD;
 }
 
 header {
@@ -64,7 +99,7 @@ header {
 
 nav {
     background-color: #48ad48;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -78,10 +113,38 @@ nav {
     position: relative;
     top: 25em;
     bottom: 0;
+    padding: 0;
+    margin: 0;
 }
 
 #articles {
     margin-top: 1em;
     border-left: 1px solid #BBB;
     border-right: 1px solid #BBB;
+}
+article {
+    padding-top: 3em;
+}
+
+.green_btn {
+    background-color: #49ad48;
+    color: white;
+}
+.green_btn:hover {
+    background-color: #3e943e;
+    color: #DDD;
+}
+.clear_decoration:hover {
+    text-decoration: none;
+}
+
+#stopka {
+    height: 3em;
+    color: white;
+    background-color: #48ad48;
+    position: relative;
+    bottom: 0;
+    margin-top: 2em;
+    width: 100%;
+    padding: 0;
 }
