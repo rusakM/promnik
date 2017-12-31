@@ -1,9 +1,6 @@
 <?php
 
-    
-    function main_page($results) {
-        require_once($_SERVER['DOCUMENT_ROOT'].'/promnik/admin/panel/connect.php');
-        $con = mysqli_connect($host, $usr, $pass, $db);
+    function main_page($con ,$results) {
         $query = mysqli_query($con, "SELECT * FROM posts ORDER BY id_post DESC");
         $rows = mysqli_num_rows($query);
         echo '<h3 class="col-12">Aktualności:</h3><br><br>';
@@ -38,7 +35,7 @@
                         array_push($content, $row['content'][$b]);
                     }
                     array_push($content, '...');
-                    $content = implode("", $content);
+                    $content = implode('', $content);
                 }
                 else {
                     $content = $row['content'];
@@ -46,4 +43,23 @@
                 echo '<cite>'.$content.'</cite></article>';
             }
     } 
+    
+    function show_post($con, $id) {
+        $post = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM posts WHERE id_post='$id'"));
+        echo '<h5 class="col-12 title">'.$post['title'].'</h5>
+            <sup><p><i style="padding-left: 1.5em" class="fa fa-calendar" aria-hidden="true"></i>
+            <cite>'.$post['date'].' '.$post['author'].'</cite></p></sup>
+            <div class="col-lg-10 col-12 row" id="post"><p class="col-12" style="padding-bottom: 2em">'.$post['content'].'</p>';
+        $pictures = mysqli_query($con, "SELECT * FROM posts_pictures WHERE id_post='$id'");
+        while ($picture = mysqli_fetch_array($pictures)) {
+            echo '<figure class="col-lg-9 col-md-10 col-12"><img class="post_photo" src="/promnik/img/posts/'.$picture[2].'"></figure>';
+        }
+        echo '</div>';
+    }
+
+    function players($con, $id) {
+        $team_name = mysqli_fetch_array(mysqli_connect($con, "SELECT name FROM teams WHERE team_id='$id'"));
+        $players = mysqli_query($con, "SELECT * FROM players WHERE team_id='$id' ORDER BY number ASC");
+        echo '';
+    }
 ?>
