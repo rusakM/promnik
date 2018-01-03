@@ -58,8 +58,8 @@
     }
 
     function players($con, $id) {
-        $team_name = mysqli_fetch_array(mysqli_connect($con, "SELECT name FROM teams WHERE team_id='$id'"));
+        $team_name = mysqli_fetch_array(mysqli_query($con, "SELECT name FROM teams WHERE team_id='$id'"));
         $players = mysqli_query($con, "SELECT * FROM players WHERE team_id='$id' ORDER BY number ASC");
-        echo '';
+        echo '<h3 class="col-12">Tabela zawodników '.$team_name[0].'</h3>';
     }
 ?>

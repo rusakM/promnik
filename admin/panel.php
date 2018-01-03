@@ -23,6 +23,7 @@ if(isset($_SESSION['log_status']) && $_SESSION['log_status'] === 1) {
                     <ul>
                         <li><a href="../admin/panel.php?strona=aktualnosci">Aktualności</a></li>
                         <li><a href="../admin/panel.php?strona=teams">Drużyny</a></li>
+                        <li><a href="../admin/panel.php?strona=trenerzy">Trenerzy</a></li>
                         <li><a href="../admin/panel.php?strona=galeria">Galeria</a></li>
                     </ul>
                 </div>
@@ -67,6 +68,12 @@ if(isset($_SESSION['log_status']) && $_SESSION['log_status'] === 1) {
                             break;
                         case "profil":
                             require_once('../admin/panel/view/profile.php');
+                            break;
+                        case "trenerzy":
+                            require_once('../admin/panel/view/coaches.php');
+                            break;
+                        case "edytujtrenera":
+                            require_once('../admin/panel/view/coach_edit.php');
                             break;
                     }
                     echo '</div></div></div>';
