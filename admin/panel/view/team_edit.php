@@ -11,7 +11,20 @@
         <textarea name="description" class="form-control col-md-7">'.$team_arr[2].'</textarea><br>
         <label>Link do www.laczynaspilka.pl:</label>
         <input type="text" name="link" value="'.$team_arr[3].'" class="form-control col-md-7"><br>
-        <input type="submit" value="Zapisz" class="btn"></form>';
+        <input type="submit" value="Zapisz" class="btn"></form>
+        <br>';
+    if($team_arr[5] != "") {
+        echo '<img src="/promnik/img/teams/'.$team_arr[5].'" class="col-md-5" style="width: 100%"><br>';
+    }
+        echo '<form action="/promnik/admin/panel/model/team_photo.php?id='.$id.'" method="post" enctype="multipart/form-data">
+                <input type="file" name="photo">';
+    if($team_arr[5] != "") {
+        echo '<input type="submit" value="Zmień" class="btn">';
+    }
+    else {
+        echo '<input type="submit" value="Zapisz" class="btn">';
+    }
+    echo '</form>';
     mysqli_close($con);
 ?>
     

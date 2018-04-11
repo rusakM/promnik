@@ -29,9 +29,9 @@
                         </div>
                         <div class="row col-lg-10 col-md-11 col-12">
                             <li><a href="index.php">Strona główna</a></li>
-                            <li><a href="index.php?strona=seniorzy">Seniorzy</a>
+                            <li>Seniorzy
                                 <ul>
-                                    <li><a href="index.php?strona=kadra&id=1">Kadra</a></li>
+                                    <li><a href="index.php?strona=druzyna&id=1">Drużyna</a></li>
                                     <li><a href="index.php?strona=terminarz&id=1">Terminarz</a></li>
                                     <?php
                                     $senior_link = mysqli_fetch_array(mysqli_query($con, "SELECT link FROM teams WHERE team_id=1"));
@@ -39,7 +39,7 @@
                                 ?>
                                 </ul>
                             </li>
-                            <li><a href="index.php?strona=druzyny">Juniorzy</a>
+                            <li><a href="#">Juniorzy</a>
                                 <?php
                                 $q = mysqli_query($con, "SELECT team_id, name, link FROM teams WHERE team_id > 1");
                                 if(mysqli_num_rows($q) > 0) {
@@ -47,7 +47,7 @@
                                     while($row = mysqli_fetch_array($q)) {
                                         echo '<li>'.$row[1].'
                                             <ul>
-                                                <li><a href="index.php?strona=kadra&id='.$row[0].'">Kadra</a></li>
+                                                <li><a href="index.php?strona=druzyna&id='.$row[0].'">Druzyna</a></li>
                                                 <li><a href="index.php?strona=terminarz&id='.$row[0].'">Terminarz</a></li>
                                                 <li><a href="'.$row[2].'">Tabela</a></li>
                                             </ul>

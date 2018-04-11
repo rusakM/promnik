@@ -24,7 +24,7 @@ div {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: bottom;
+    background-position:center;
     width: 100%;
     position: absolute;
     top: 80px;
@@ -130,6 +130,9 @@ nav {
 
 #articles {
     margin-top: 1em;
+    padding: 5em 0 0 0;
+    margin-left: 0;
+    margin-right: 0;
     border-left: 1px solid #BBB;
     border-right: 1px solid #BBB;
     padding-bottom: 5em;
@@ -177,3 +180,29 @@ article {
     width: 100%;
 }
 
+.player_container {
+    border-top: 5px solid #49ad48;
+    border-bottom: 5px solid #49ad48;
+    border-right: 1px solid #49ad48;
+    border-left: 1px solid #49ad48;
+    margin-bottom: 3em;
+    
+}
+
+.player_photo {
+    width: 100%;
+}
+
+.reset {
+    margin: 0;
+    padding: 0;
+}
+
+.set_heading_position {
+    padding-bottom: 2em;
+    margin-top: -2em;
+}
+
+.sponsor_img {
+    width: 100%;
+}

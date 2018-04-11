@@ -8,5 +8,5 @@
     $link = $_POST['link'];
     mysqli_query($con, "UPDATE teams SET name='$name', description='$desc', link='$link' WHERE team_id='$id'");
     mysqli_close($con);
-    header('Location: /promnik/admin/panel.php?strona=teams');
+    header('Location: /promnik/admin/panel.php?strona=edytujdruzyne&id='.$id);
 ?>

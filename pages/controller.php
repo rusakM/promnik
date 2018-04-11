@@ -17,8 +17,8 @@
             case 'terminarz':
                 scheduler($con, $_GET['id']);
                 break;
-            case 'kadra':
-                players($con, $_GET['id']);
+            case 'druzyna':
+                team($con, $_GET['id']);
                 break;
             case 'o_klubie':
                 about();
@@ -27,7 +27,7 @@
                 gallery($con);
                 break;
             case 'sponsorzy':
-                contributors();
+                sponsors($con);
                 break;
             case 'kontakt':
                 contact();
