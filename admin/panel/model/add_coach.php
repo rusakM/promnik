@@ -10,8 +10,13 @@
     $id = $id[0];
     if($_FILES['photo']['type'] === 'image/jpeg') {
         $photo = crc32($_FILES['photo']['tmp_name']).'.jpg';
-        move_uploaded_file($_FILES['photo']['tmp_name'], "$img_location/$photo");
+        $image = imagecreatefromjpeg($_FILES['photo']['tmp_name']);
+        if(imagesx($image) > 480){
+                $image = imagescale($image, 480);    
+            }
+        imagejpeg($image, "$img_location/$photo", 90);
         mysqli_query($con, "UPDATE coaches SET photo='$photo' WHERE coach_id='$id'");
+        imagedestroy($image);
     }
     mysqli_close($con);
     header('Location: /promnik/admin/panel.php?strona=trenerzy');

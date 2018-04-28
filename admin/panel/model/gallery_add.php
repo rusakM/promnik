@@ -8,15 +8,23 @@
     if($_FILES['photo']['error'] === 0) {
         switch($_FILES['photo']['type']){
             case 'image/jpeg':
-                $photo = crc32($_FILES['photo']['tmp_name']).'.jpg';
+                $image = imagecreatefromjpeg($_FILES['photo']['tmp_name']);
                 break;
             case 'image/png':
-                $photo = crc32($_FILES['photo']['tmp_name']).'.png';
+                $image = imagecreatefrompng($_FILES['photo']['tmp_name']);
                 break;
         }
-        if(isset($photo)) {
-            move_uploaded_file($_FILES['photo']['tmp_name'], "$img_location/$photo");
+        $photo = crc32($_FILES['photo']['tmp_name']).'.jpg';
+        if(isset($image)) {
+            if(imagesx($image) > 1024){
+                $image = imagescale($image, 1024);
+            }
+            $image_thumb = imagescale($image, 160);
+            imagejpeg($image_thumb, "$img_location/thumbnails/$photo", 80);
+            imagejpeg($image, "$img_location/$photo", 90);
             mysqli_query($con, "INSERT INTO gallery(picture_id, name, date) VALUES(NULL, '$photo', '$date')");
+            imagedestroy($image);
+            imagedestroy($image_thumb);
         }
     }
     mysqli_close($con);

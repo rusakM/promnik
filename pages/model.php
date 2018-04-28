@@ -135,11 +135,11 @@
     function sponsors($con) {
         $sponsors = mysqli_query($con, "SELECT photo FROM sponsors");
         echo '<h3 class="col-12 set_heading_position">Sponsorzy</h3>
-            <div class="col-md-1"></div>
-            <div class="col-md-10 row">';
+            <div class="col-md-2"></div>
+            <div class="col-md-8 row">';
         while($sponsor = mysqli_fetch_array($sponsors)) {
-            echo '<img src="/promnik/img/sponsors'.$sponsor[0].'" class="col-12 sponsor_img">';
+            echo '<img src="/promnik/img/sponsors/'.$sponsor[0].'" class="col-12 sponsor_img" width="100%" height="100%">';
         }
-        echo '</div>';
+        echo '</div><div class="col-md-2"></div>';
     }
 ?>

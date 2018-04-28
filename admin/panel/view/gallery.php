@@ -13,7 +13,7 @@
         <div class="row col-md-11">';
     while($photo = mysqli_fetch_assoc($pictures)) {
         echo '<div class="row col-md-4">
-            <img src="/promnik/img/gallery/'.$photo['name'].'" class="col-12">
+            <img src="/promnik/img/gallery/'.$photo['name'].'" width="100%" height="100%">
             <a class="col-12" href="/promnik/admin/panel/model/gallery_del.php?id='.$photo['picture_id'].'">
             <button class="btn col-12">Usuń</button>
         </div>';

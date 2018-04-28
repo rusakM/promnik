@@ -10,8 +10,13 @@
     }
     if($_FILES['photo']['error'] === 0 && $_FILES['photo']['type'] === 'image/jpeg') {
         $photo = crc32($_FILES['photo']['tmp_name']).'.jpg';
-        move_uploaded_file($_FILES['photo']['tmp_name'], "$img_location/$photo");
+        $image = imagecreatefromjpeg($_FILES['photo']['tmp_name']);
+        if(imagesx($image) > 1600){
+            $image = imagescale($image, 1600);    
+        }
+        imagejpeg($image, "$img_location/$photo", 80);
         mysqli_query($con, "UPDATE teams SET team_photo='$photo' WHERE team_id='$id'");
+        imagedestroy($image);
     }
     mysqli_close($con);
     header('Location: /promnik/admin/panel.php?strona=edytujdruzyne&id='.$id);

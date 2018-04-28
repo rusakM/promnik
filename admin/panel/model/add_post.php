@@ -14,7 +14,12 @@
     for($a = 0; $a < count($_FILES); $a++) {
         if($_FILES['pic'.$a]['error'] === 0 && $_FILES['pic'.$a]['type'] === 'image/jpeg') {
             $name = crc32($_FILES['pic'.$a]['tmp_name']).'.jpg';
-            move_uploaded_file($_FILES['pic'.$a]['tmp_name'], "$img_location/$name");
+            $image = imagecreatefromjpeg($_FILES['pic'.$a]['tmp_name']);
+            if(imagesx($image) > 1024){
+                $image = imagescale($image, 1024);    
+            }
+            imagejpeg($image, "$img_location/$name", 85);
+            imagedestroy($image);
             mysqli_query($connect, "INSERT INTO posts_pictures (id_picture, id_post, name) VALUES (NULL, '$id_post', '$name')");
         }
     } 

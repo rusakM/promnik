@@ -13,12 +13,11 @@
         <br>';
     $sponsors = mysqli_query($con, "SELECT * FROM sponsors");
     while ($sponsor = mysqli_fetch_array($sponsors)) {
-        echo '<div>
-                <span>'.$sponsor[1].'</span>';
+        echo '<div>';
         if($sponsor[2] != '') {
-            echo '<img src="/promnik/img/sponsors/'.$sponsor[2].'">';
+            echo '<img src="/promnik/img/sponsors/'.$sponsor[2].'"><br>';
         }
-        echo '<a href="/promnik/admin/panel/model/sponsor_del.php?id='.$sponsor[0].'">Usuń</a></div><hr>';
+        echo '<span style="margin-left: 40px; padding-right: 50px;">'.$sponsor[1].'</span>
+        <a href="/promnik/admin/panel/model/sponsor_del.php?id='.$sponsor[0].'">Usuń</a></div><hr>';
     }
-
 ?>

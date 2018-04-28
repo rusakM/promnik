@@ -9,15 +9,23 @@
     if($_FILES['photo']['error'] === 0) {
         switch($_FILES['photo']['type']){
             case 'image/jpeg':
-                $photo = crc32($_FILES['photo']['tmp_name']).'.jpg';
+                $image = imagecreatefromjpeg($_FILES['photo']['tmp_name']);
                 break;
             case 'image/png':
-                $photo = crc32($_FILES['photo']['tmp_name']).'.png';
+                $image = imagecreatefrompng($_FILES['photo']['tmp_name']);
+                break;
+            case 'image/gif':
+                $image = imagecreatefromgif($_FILES['photo']['tmp_name']);
                 break;
         }
-        if(isset($photo)) {
-            move_uploaded_file($_FILES['photo']['tmp_name'], "$img_location/$photo");
+        $photo = crc32($_FILES['photo']['tmp_name']).'.jpg';
+        if(isset($image)) {
+            if(imagesx($image) > 576){
+                $image = imagescale($image, 576);    
+            }
+            imagejpeg($image, "$img_location/$photo", 90);
             mysqli_query($con, "INSERT INTO sponsors(id_sponsor, name, photo, author, date) VALUES(NULL, '$name', '$photo', '$author', '$date')");
+            imagedestroy($image);
         }
         else {
             mysqli_query($con, "INSERT INTO sponsors(id_sponsor, name, photo, author, date) VALUES(NULL, '$name', NULL, '$author', '$date')");

@@ -24,8 +24,13 @@
                 if($_FILES['photo']['type'] === "image/jpeg" && $_FILES['photo']['error'] === 0) {
                     unlink("$img_location/$photo_name");
                     $photo_new_name = crc32($_FILES['photo']['tmp_name']).'.jpg';
-                    move_uploaded_file($_FILES['photo']['tmp_name'], "$img_location/$photo_new_name");
+                    $image = imagecreatefromjpeg($_FILES['photo']['tmp_name']);
+                    if(imagesx($image) > 480){
+                        $image = imagescale($image, 480);    
+                    }
+                    imagejpeg($image, "$img_location/$photo_new_name", 90);
                     mysqli_query($con, "UPDATE coaches SET photo='$photo_new_name' WHERE coach_id='$id'");
+                    imagedestroy($image);
                 }
             }
             break;

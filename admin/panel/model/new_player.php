@@ -8,11 +8,16 @@
         $photo = NULL;
         if($_FILES['picture']['error'] === 0 && $_FILES['picture']['type'] === 'image/jpeg') {
             $photo = crc32($_FILES['picture']['tmp_name']).'.jpg';
-            move_uploaded_file($_FILES['picture']['tmp_name'], "$img_location/$photo");
+            $image = imagecreatefromjpeg($_FILES['picture']['tmp_name']);
+            if(imagesx($image) > 480){
+                $image = imagescale($image, 480);    
+            }
+            imagejpeg($image, "$img_location/$photo", 85);
+            imagedestroy($image);
         }
     }
     else {
-        $name = NULL;
+        $photo = NULL;
     }
     $number = $_POST['number'];
     $name = $_POST['name'];
@@ -22,5 +27,6 @@
 
     mysqli_query($con, "INSERT INTO players(player_id, team_id, number, name, surname, birth_date, photo) VALUES (NULL, '$team','$number','$name','$surname','$date', '$photo')");
     mysqli_close($con);
+
     header("Location: /promnik/admin/panel.php?strona=zawodnicy&druzyna=$team");
 ?>

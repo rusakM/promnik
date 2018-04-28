@@ -24,8 +24,13 @@
         case 'new_picture':
             if($_FILES['new_pic']['error'] === 0 && $_FILES['new_pic']['type'] === 'image/jpeg') {
                 $name = crc32($_FILES['new_pic']['tmp_name']).'.jpg';
-                move_uploaded_file($_FILES['new_pic']['tmp_name'], "$img_location/$name");
+                $image = imagecreatefromjpeg($_FILES['new_pic']['tmp_name']);
+                if(imagesx($image) > 1024){
+                    $image = imagescale($image, 1024);    
+                }
+                imagejpeg($image, "$img_location/$name", 90);
                 mysqli_query($con, "INSERT INTO posts_pictures (id_picture, id_post, name) VALUES (NULL, '$id', '$name')");
+                imagedestroy($image);
             }
             break;
     }
