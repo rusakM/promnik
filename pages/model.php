@@ -134,12 +134,61 @@
 
     function sponsors($con) {
         $sponsors = mysqli_query($con, "SELECT photo FROM sponsors");
-        echo '<h3 class="col-12 set_heading_position">Sponsorzy</h3>
+        echo '<h3 class="col-12 set_heading_position">Sponsorzy:</h3>
             <div class="col-md-2"></div>
             <div class="col-md-8 row">';
         while($sponsor = mysqli_fetch_array($sponsors)) {
             echo '<img src="/promnik/img/sponsors/'.$sponsor[0].'" class="col-12 sponsor_img" width="100%" height="100%">';
         }
         echo '</div><div class="col-md-2"></div>';
+    }
+    function gallery_item($r) {
+        echo '<div class="col-lg-4 col-md-6 col-12 row" style="margin-left: 0; margin-right: 0;">
+                    <figure class="player_container text-center">
+                        <img src="/promnik/img/gallery/thumbnails/'.$r[0].'" class="player_photo">
+                        <small><cite>Data dodania: '.$r[1].'</cite></small>
+                    </figure>
+                </div>
+                ';
+    }
+
+    function gallery($con, $p) {
+        $gallery = mysqli_query($con, "SELECT name, date FROM gallery");
+        $rows = mysqli_num_rows($gallery);
+         echo '<h3 class="col-12 set_heading_position">Galeria:</h3>
+                <div class="col-md-1"></div>
+                <article class="col-md-10 col-12 row" style="padding-left: 0; padding-right: 0; margin-left: 0; margin-right: 0; padding-bottom: 10px;">';
+        if($p + 18 >= $rows) {
+            for($a = 0; $a < $rows; $a++) {
+                if($a >= $p) {
+                    $row = mysqli_fetch_array($gallery); 
+                    gallery_item($row);
+                }
+            }
+            if($p >= 18) {
+                $prev = $p - 18;
+                echo '<div class="col-12 text-center">
+                    <a href="index.php?strona=galeria&p='. $prev .'">Popprzednia strona</a></div>';
+            }
+        }
+        else {
+            for($a = 0; $a < $p + 18; $a++) {
+                if($a >= $p) {
+                    $row = mysqli_fetch_array($gallery);
+                    gallery_item($row);
+                }
+            }
+            echo '<div class="col-12 text-center">';
+            $prev = $p - 18;
+            $pop = $p + 18;
+            if($prev >= 0) {
+                    echo '<a href="index.php?strona=galeria&p='. $prev .'">Poprzednia strona</a> | ';
+            }
+            if($pop < $rows) {
+                echo '<a href="index.php?strona=galeria&p='. $pop .'">Następna strona</a>';
+            }
+            echo '</div>';
+        }
+        echo '</article><div class="col-md-1"></div>';
     }
 ?>

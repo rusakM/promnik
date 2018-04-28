@@ -154,13 +154,13 @@ article {
 }
 
 #stopka {
-    height: 3em;
+    height: 4em;
     color: white;
     background-color: #48ad48;
     position: relative;
     margin-top: 2em;
     width: 100%;
-    padding-top: 1em;
+    padding-top: 2em;
     padding: 0;
     bottom: 0;
 }

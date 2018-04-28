@@ -22,7 +22,6 @@
         <div id="container-fluid">
             <header>
                 <nav>
-                    <!--<i id="menu" class="fa fa-bars" aria-hidden="true"></i>-->
                     <ul id="list" class="row">
                         <div class="col-md-2">
                             <img src="img/page/logo.png" alt="" id="logo">
@@ -75,8 +74,11 @@
                 ?>
 
                 </div>
-                <footer class="col-12" id="stopka">
-                    <p>Stronę wykonał Mateusz Rusak</p>
+                <footer class="col-12 text-center" id="stopka">
+                    <p style="padding-top: 1em; positon: absolute;">Projekt i wykonanie: Mateusz Rusak 
+                        <a href="https://facebook.com/mateusz.rusak.31" target="_blank"><i class="fab fa-facebook-square"></i>
+
+</a></p> 
                 </footer>
             </section>
         </div>

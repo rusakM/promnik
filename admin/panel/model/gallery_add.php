@@ -19,7 +19,7 @@
             if(imagesx($image) > 1024){
                 $image = imagescale($image, 1024);
             }
-            $image_thumb = imagescale($image, 160);
+            $image_thumb = imagescale($image, 320);
             imagejpeg($image_thumb, "$img_location/thumbnails/$photo", 80);
             imagejpeg($image, "$img_location/$photo", 90);
             mysqli_query($con, "INSERT INTO gallery(picture_id, name, date) VALUES(NULL, '$photo', '$date')");

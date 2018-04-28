@@ -24,7 +24,12 @@
                 about();
                 break;
             case 'galeria':
-                gallery($con);
+                if(isset($_GET['p'])) {
+                    gallery($con, $_GET['p']);
+                }
+                else {    
+                    gallery($con, 0);
+                }
                 break;
             case 'sponsorzy':
                 sponsors($con);
