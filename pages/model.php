@@ -145,7 +145,7 @@
     function gallery_item($r) {
         echo '<div class="col-lg-4 col-md-6 col-12 row" style="margin-left: 0; margin-right: 0;">
                     <figure class="player_container text-center">
-                        <img src="/promnik/img/gallery/thumbnails/'.$r[0].'" class="player_photo">
+                        <img src="/promnik/img/gallery/'.$r[0].'" class="player_photo" alt="'.$r[0].'">
                         <small><cite>Data dodania: '.$r[1].'</cite></small>
                     </figure>
                 </div>
@@ -153,7 +153,7 @@
     }
 
     function gallery($con, $p) {
-        $gallery = mysqli_query($con, "SELECT name, date FROM gallery");
+        $gallery = mysqli_query($con, "SELECT name, date, picture_id FROM gallery");
         $rows = mysqli_num_rows($gallery);
          echo '<h3 class="col-12 set_heading_position">Galeria:</h3>
                 <div class="col-md-1"></div>
@@ -189,6 +189,7 @@
             }
             echo '</div>';
         }
-        echo '</article><div class="col-md-1"></div>';
+        echo '</article><div class="col-md-1"></div>
+        <script src="/js/gallery.js"><script>';
     }
 ?>

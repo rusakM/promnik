@@ -130,7 +130,7 @@ nav {
 
 #articles {
     margin-top: 1em;
-    padding: 5em 0 0 0;
+    padding: 3em 0 0 0;
     margin-left: 0;
     margin-right: 0;
     border-left: 1px solid #BBB;
@@ -138,7 +138,7 @@ nav {
     padding-bottom: 5em;
 }
 article {
-    padding-top: 3em;
+    padding-top: 1em;
 }
 
 .green_btn {
@@ -199,10 +199,15 @@ article {
 }
 
 .set_heading_position {
-    padding-bottom: 2em;
-    margin-top: -2em;
+    padding-bottom: 1em;
+    margin-top: -1em;
 }
 
 .sponsor_img {
     width: 100%;
+}
+footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
 }

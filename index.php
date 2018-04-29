@@ -75,10 +75,9 @@
 
                 </div>
                 <footer class="col-12 text-center" id="stopka">
-                    <p style="padding-top: 1em; positon: absolute;">Projekt i wykonanie: Mateusz Rusak 
-                        <a href="https://facebook.com/mateusz.rusak.31" target="_blank"><i class="fab fa-facebook-square"></i>
-
-</a></p> 
+                    <p style="padding-top: 1em; positon: absolute;"><span style="padding-right: 2em">Projekt i wykonanie: Mateusz Rusak </span>
+                        <a href="https://facebook.com/mateusz.rusak.31" target="_blank"><i class="fa fa-facebook-square white-text" aria-hidden="true"></i> </a>
+                        <a href="https://codepen.io/rusakkk"><i class="fa fa-codepen" aria-hidden="true"></i></a></p> 
                 </footer>
             </section>
         </div>
