@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/script.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
 </head>
 <?php
@@ -74,6 +73,10 @@
                 ?>
 
                 </div>
+                <div id="cookie-container">
+                    <p class="cookie"><small>Ta strona wykorzystuje pliki cookie aby świadczyć usługi na najwyższym poziomie. Dalsze korzystanie ze strony oznacza, że zgadzasz się na ich użycie.</small></p>
+            <button class="btn" id="cookie-accept">Zgoda</button>
+        </div>
                 <footer class="col-12 text-center" id="stopka">
                     <p style="padding-top: 1em; positon: absolute;"><span style="padding-right: 2em">Projekt i wykonanie: Mateusz Rusak </span>
                         <a href="https://facebook.com/mateusz.rusak.31" target="_blank"><i class="fa fa-facebook-square white-text" aria-hidden="true"></i> </a>
@@ -81,6 +84,7 @@
                 </footer>
             </section>
         </div>
+        
     </body>
-
+    <script src="js/script.js"></script>
 </html>
