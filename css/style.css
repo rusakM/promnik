@@ -224,10 +224,12 @@ footer a {
     z-index: 10000;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
 }
 
 .cookie {
     display: flex;
+    padding-left: 2em;
 }
 
 #cookie-accept {

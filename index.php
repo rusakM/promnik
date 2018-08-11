@@ -6,6 +6,9 @@
     <title>UKS - Promnik Gończyce</title>
     <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="author" content="Mateusz Rusak">
+    <meta name="description" content="Strona klubu Promnik Gończyce. Aktualności, wyniki meczów, zawodnicy i tabele.">
+    <meta name="keywords" content="gończyce, promnik, promnikgończyce, UKS promnik gończyce">
     <link rel="stylesheet" href="https://use.fontawesome.com/45b87b5955.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
