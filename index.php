@@ -12,7 +12,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/45b87b5955.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    
     <script src="js/jquery-3.2.1.min.js"></script>
+    
     <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
 </head>
 <?php
@@ -26,9 +29,9 @@
                 <nav>
                     <ul id="list" class="row">
                         <div class="col-md-2">
-                            <img src="img/page/logo.png" alt="" id="logo">
+                            <a href="index.php"><img src="img/page/logo.png" alt="" id="logo"></a>
                         </div>
-                        <div class="row col-lg-10 col-md-11 col-12">
+                        <div class="row col-lg-10 col-md-11 col-12" id="nav-menu">
                             <li><a href="index.php">Strona główna</a></li>
                             <li>Seniorzy
                                 <ul>
@@ -63,6 +66,7 @@
                             <li><a href="index.php?strona=kontakt">Kontakt</a></li>
                         </div>
                     </ul>
+                    <button id="h-menu"><i class="fa fa-bars" aria-hidden="true"></i></button>
                 </nav>
                 <div id="banner">
                     <h1 id="slogan"><span>PROMNIK</span> GOŃCZYCE</h1>
@@ -89,5 +93,5 @@
         </div>
         
     </body>
-    <script src="js/script.js"></script>
 </html>
+<script src="js/script.js"></script>  

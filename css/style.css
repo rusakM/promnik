@@ -23,7 +23,7 @@ div {
     background-image: url('../img/page/background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+   /* background-attachment: fixed;*/
     background-position:center;
     width: 100%;
     position: absolute;
@@ -32,7 +32,7 @@ div {
 
 #slogan {
     position: absolute;
-    top: 150px;
+    top: 35%;
     left: 50%;
     transform: translateX(-50%);
     font-family: Arial;
